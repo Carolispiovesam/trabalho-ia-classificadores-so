@@ -1,0 +1,257 @@
+execucao,tempo,participante,tipo,evento,estado_ocupacao,id_operacao
+1,0.000092,0,Passageiro,Chegada na Fila,0,1
+1,0.000149,-1,Carro,Fase: Embarcando,0,1
+1,0.000154,0,Passageiro,Embarcou,1,1
+1,0.001347,1,Passageiro,Chegada na Fila,1,1
+1,0.001347,1,Passageiro,Embarcou,2,1
+1,0.002661,2,Passageiro,Chegada na Fila,2,1
+1,0.002661,2,Passageiro,Embarcou,3,1
+1,0.003863,3,Passageiro,Chegada na Fila,3,1
+1,0.003864,3,Passageiro,Embarcou,4,1
+1,0.003875,-1,Carro,Fase: Passeando,4,1
+1,0.005106,4,Passageiro,Chegada na Fila,4,1
+1,0.006364,5,Passageiro,Chegada na Fila,4,1
+1,0.007615,6,Passageiro,Chegada na Fila,4,1
+1,0.008867,7,Passageiro,Chegada na Fila,4,1
+1,0.009907,9,Passageiro,Chegada na Fila,4,1
+1,0.010113,8,Passageiro,Chegada na Fila,4,1
+1,0.010115,-1,Carro,Fase: Desembarcando,4,1
+1,0.010124,0,Passageiro,Desembarcou,3,1
+1,0.010125,2,Passageiro,Desembarcou,2,1
+1,0.010127,1,Passageiro,Desembarcou,1,1
+1,0.010129,3,Passageiro,Desembarcou,0,1
+1,0.010138,-1,Carro,Vazio - Aguardando,0,1
+1,0.010138,-1,Carro,Fase: Embarcando,0,2
+1,0.010148,4,Passageiro,Embarcou,1,2
+1,0.010153,5,Passageiro,Embarcou,2,2
+1,0.010154,6,Passageiro,Embarcou,3,2
+1,0.010157,9,Passageiro,Embarcou,4,2
+1,0.010164,-1,Carro,Fase: Passeando,4,2
+1,0.012622,10,Passageiro,Chegada na Fila,4,2
+1,0.013856,13,Passageiro,Chegada na Fila,4,2
+1,0.013865,11,Passageiro,Chegada na Fila,4,2
+1,0.015117,12,Passageiro,Chegada na Fila,4,2
+1,0.016444,-1,Carro,Fase: Desembarcando,4,2
+1,0.016451,15,Passageiro,Chegada na Fila,4,2
+1,0.016461,4,Passageiro,Desembarcou,3,2
+1,0.016462,5,Passageiro,Desembarcou,2,2
+1,0.016467,6,Passageiro,Desembarcou,1,2
+1,0.016468,9,Passageiro,Desembarcou,0,2
+1,0.016481,-1,Carro,Vazio - Aguardando,0,2
+1,0.016481,-1,Carro,Fase: Embarcando,0,3
+1,0.016509,7,Passageiro,Embarcou,1,3
+1,0.016510,8,Passageiro,Embarcou,2,3
+1,0.016516,13,Passageiro,Embarcou,3,3
+1,0.016517,11,Passageiro,Embarcou,4,3
+1,0.016530,-1,Carro,Fase: Passeando,4,3
+1,0.017624,14,Passageiro,Chegada na Fila,4,3
+1,0.020126,16,Passageiro,Chegada na Fila,4,3
+1,0.021373,17,Passageiro,Chegada na Fila,4,3
+1,0.022625,18,Passageiro,Chegada na Fila,4,3
+1,0.022793,-1,Carro,Fase: Desembarcando,4,3
+1,0.022797,20,Passageiro,Chegada na Fila,4,3
+1,0.022809,7,Passageiro,Desembarcou,3,3
+1,0.022813,13,Passageiro,Desembarcou,2,3
+1,0.022815,8,Passageiro,Desembarcou,1,3
+1,0.022819,11,Passageiro,Desembarcou,0,3
+1,0.022833,-1,Carro,Vazio - Aguardando,0,3
+1,0.022834,-1,Carro,Fase: Embarcando,0,4
+1,0.022861,10,Passageiro,Embarcou,1,4
+1,0.022865,14,Passageiro,Embarcou,2,4
+1,0.022867,16,Passageiro,Embarcou,3,4
+1,0.022870,17,Passageiro,Embarcou,4,4
+1,0.022885,-1,Carro,Fase: Passeando,4,4
+1,0.023877,19,Passageiro,Chegada na Fila,4,4
+1,0.026138,21,Passageiro,Chegada na Fila,4,4
+1,0.026142,26,Passageiro,Chegada na Fila,4,4
+1,0.027128,22,Passageiro,Chegada na Fila,4,4
+1,0.028133,23,Passageiro,Chegada na Fila,4,4
+1,0.028138,-1,Carro,Fase: Desembarcando,4,4
+1,0.028140,28,Passageiro,Chegada na Fila,4,4
+1,0.028155,14,Passageiro,Desembarcou,3,4
+1,0.028159,16,Passageiro,Desembarcou,2,4
+1,0.028168,17,Passageiro,Desembarcou,1,4
+1,0.028174,10,Passageiro,Desembarcou,0,4
+1,0.028188,-1,Carro,Vazio - Aguardando,0,4
+1,0.028189,-1,Carro,Fase: Embarcando,0,5
+1,0.028224,20,Passageiro,Embarcou,1,5
+1,0.028225,15,Passageiro,Embarcou,2,5
+1,0.028234,21,Passageiro,Embarcou,3,5
+1,0.028236,26,Passageiro,Embarcou,4,5
+1,0.028251,-1,Carro,Fase: Passeando,4,5
+1,0.028972,24,Passageiro,Chegada na Fila,4,5
+1,0.030134,25,Passageiro,Chegada na Fila,4,5
+1,0.030136,30,Passageiro,Chegada na Fila,4,5
+1,0.032133,27,Passageiro,Chegada na Fila,4,5
+1,0.032137,32,Passageiro,Chegada na Fila,4,5
+1,0.034134,29,Passageiro,Chegada na Fila,4,5
+1,0.034137,34,Passageiro,Chegada na Fila,4,5
+1,0.034515,-1,Carro,Fase: Desembarcando,4,5
+1,0.034519,31,Passageiro,Chegada na Fila,4,5
+1,0.034531,20,Passageiro,Desembarcou,3,5
+1,0.034539,21,Passageiro,Desembarcou,2,5
+1,0.034541,15,Passageiro,Desembarcou,1,5
+1,0.034545,26,Passageiro,Desembarcou,0,5
+1,0.034556,-1,Carro,Vazio - Aguardando,0,5
+1,0.034556,-1,Carro,Fase: Embarcando,0,6
+1,0.034591,28,Passageiro,Embarcou,1,6
+1,0.034592,23,Passageiro,Embarcou,2,6
+1,0.034598,22,Passageiro,Embarcou,3,6
+1,0.034599,18,Passageiro,Embarcou,4,6
+1,0.034628,-1,Carro,Fase: Passeando,4,6
+1,0.038156,33,Passageiro,Chegada na Fila,4,6
+1,0.038162,38,Passageiro,Chegada na Fila,4,6
+1,0.040139,35,Passageiro,Chegada na Fila,4,6
+1,0.040143,40,Passageiro,Chegada na Fila,4,6
+1,0.040892,-1,Carro,Fase: Desembarcando,4,6
+1,0.040896,37,Passageiro,Chegada na Fila,4,6
+1,0.040909,23,Passageiro,Desembarcou,3,6
+1,0.040912,28,Passageiro,Desembarcou,2,6
+1,0.040914,18,Passageiro,Desembarcou,1,6
+1,0.040923,22,Passageiro,Desembarcou,0,6
+1,0.040932,-1,Carro,Vazio - Aguardando,0,6
+1,0.040933,-1,Carro,Fase: Embarcando,0,7
+1,0.040972,25,Passageiro,Embarcou,1,7
+1,0.040978,32,Passageiro,Embarcou,2,7
+1,0.040982,29,Passageiro,Embarcou,3,7
+1,0.040985,34,Passageiro,Embarcou,4,7
+1,0.041012,-1,Carro,Fase: Passeando,4,7
+1,0.041142,36,Passageiro,Chegada na Fila,4,7
+1,0.041145,41,Passageiro,Chegada na Fila,4,7
+1,0.041508,39,Passageiro,Chegada na Fila,4,7
+1,0.047143,42,Passageiro,Chegada na Fila,4,7
+1,0.047147,47,Passageiro,Chegada na Fila,4,7
+1,0.047274,-1,Carro,Fase: Desembarcando,4,7
+1,0.047303,25,Passageiro,Desembarcou,3,7
+1,0.047304,29,Passageiro,Desembarcou,2,7
+1,0.047308,32,Passageiro,Desembarcou,1,7
+1,0.047309,34,Passageiro,Desembarcou,0,7
+1,0.047326,-1,Carro,Vazio - Aguardando,0,7
+1,0.047326,-1,Carro,Fase: Embarcando,0,8
+1,0.047377,37,Passageiro,Embarcou,1,8
+1,0.047379,40,Passageiro,Embarcou,2,8
+1,0.047381,30,Passageiro,Embarcou,3,8
+1,0.047382,31,Passageiro,Embarcou,4,8
+1,0.047411,-1,Carro,Fase: Passeando,4,8
+1,0.048157,43,Passageiro,Chegada na Fila,4,8
+1,0.048162,48,Passageiro,Chegada na Fila,4,8
+1,0.049168,44,Passageiro,Chegada na Fila,4,8
+1,0.050165,45,Passageiro,Chegada na Fila,4,8
+1,0.050169,50,Passageiro,Chegada na Fila,4,8
+1,0.051150,46,Passageiro,Chegada na Fila,4,8
+1,0.051153,51,Passageiro,Chegada na Fila,4,8
+1,0.053676,-1,Carro,Fase: Desembarcando,4,8
+1,0.053692,37,Passageiro,Desembarcou,3,8
+1,0.053696,30,Passageiro,Desembarcou,2,8
+1,0.053699,31,Passageiro,Desembarcou,1,8
+1,0.053714,40,Passageiro,Desembarcou,0,8
+1,0.053726,-1,Carro,Vazio - Aguardando,0,8
+1,0.053727,-1,Carro,Fase: Embarcando,0,9
+1,0.053781,41,Passageiro,Embarcou,1,9
+1,0.053783,24,Passageiro,Embarcou,2,9
+1,0.053784,42,Passageiro,Embarcou,3,9
+1,0.053790,47,Passageiro,Embarcou,4,9
+1,0.053824,-1,Carro,Fase: Passeando,4,9
+1,0.054026,49,Passageiro,Chegada na Fila,4,9
+1,0.056549,53,Passageiro,Chegada na Fila,4,9
+1,0.057152,52,Passageiro,Chegada na Fila,4,9
+1,0.059149,54,Passageiro,Chegada na Fila,4,9
+1,0.059506,59,Passageiro,Chegada na Fila,4,9
+1,0.060083,-1,Carro,Fase: Desembarcando,4,9
+1,0.060084,56,Passageiro,Chegada na Fila,4,9
+1,0.060092,41,Passageiro,Desembarcou,3,9
+1,0.060093,24,Passageiro,Desembarcou,2,9
+1,0.060095,42,Passageiro,Desembarcou,1,9
+1,0.060097,47,Passageiro,Desembarcou,0,9
+1,0.060105,-1,Carro,Vazio - Aguardando,0,9
+1,0.060105,-1,Carro,Fase: Embarcando,0,10
+1,0.060134,27,Passageiro,Embarcou,1,10
+1,0.060135,39,Passageiro,Embarcou,2,10
+1,0.060137,35,Passageiro,Embarcou,3,10
+1,0.060139,48,Passageiro,Embarcou,4,10
+1,0.060161,-1,Carro,Fase: Passeando,4,10
+1,0.060176,55,Passageiro,Chegada na Fila,4,10
+1,0.062150,57,Passageiro,Chegada na Fila,4,10
+1,0.063154,58,Passageiro,Chegada na Fila,4,10
+1,0.063157,63,Passageiro,Chegada na Fila,4,10
+1,0.065158,60,Passageiro,Chegada na Fila,4,10
+1,0.065423,-1,Carro,Fase: Desembarcando,4,10
+1,0.065433,27,Passageiro,Desembarcou,3,10
+1,0.065434,35,Passageiro,Desembarcou,2,10
+1,0.065435,39,Passageiro,Desembarcou,1,10
+1,0.065436,48,Passageiro,Desembarcou,0,10
+1,0.065455,-1,Carro,Vazio - Aguardando,0,10
+1,0.065455,-1,Carro,Fase: Embarcando,0,11
+1,0.065485,44,Passageiro,Embarcou,1,11
+1,0.065491,19,Passageiro,Embarcou,2,11
+1,0.065492,46,Passageiro,Embarcou,3,11
+1,0.065493,38,Passageiro,Embarcou,4,11
+1,0.065513,-1,Carro,Fase: Passeando,4,11
+1,0.066155,61,Passageiro,Chegada na Fila,4,11
+1,0.067154,62,Passageiro,Chegada na Fila,4,11
+1,0.071774,-1,Carro,Fase: Desembarcando,4,11
+1,0.071791,44,Passageiro,Desembarcou,3,11
+1,0.071793,46,Passageiro,Desembarcou,2,11
+1,0.071797,19,Passageiro,Desembarcou,1,11
+1,0.071801,38,Passageiro,Desembarcou,0,11
+1,0.071817,-1,Carro,Vazio - Aguardando,0,11
+1,0.071817,-1,Carro,Fase: Embarcando,0,12
+1,0.071873,36,Passageiro,Embarcou,1,12
+1,0.071883,43,Passageiro,Embarcou,2,12
+1,0.071885,53,Passageiro,Embarcou,3,12
+1,0.071886,56,Passageiro,Embarcou,4,12
+1,0.071924,-1,Carro,Fase: Passeando,4,12
+1,0.077953,-1,Carro,Fase: Desembarcando,4,12
+1,0.077966,36,Passageiro,Desembarcou,3,12
+1,0.077970,43,Passageiro,Desembarcou,2,12
+1,0.077972,53,Passageiro,Desembarcou,1,12
+1,0.077975,56,Passageiro,Desembarcou,0,12
+1,0.077990,-1,Carro,Vazio - Aguardando,0,12
+1,0.077991,-1,Carro,Fase: Embarcando,0,13
+1,0.078032,58,Passageiro,Embarcou,1,13
+1,0.078038,12,Passageiro,Embarcou,2,13
+1,0.078044,60,Passageiro,Embarcou,3,13
+1,0.078045,50,Passageiro,Embarcou,4,13
+1,0.078075,-1,Carro,Fase: Passeando,4,13
+1,0.084342,-1,Carro,Fase: Desembarcando,4,13
+1,0.084359,58,Passageiro,Desembarcou,3,13
+1,0.084361,60,Passageiro,Desembarcou,2,13
+1,0.084364,12,Passageiro,Desembarcou,1,13
+1,0.084365,50,Passageiro,Desembarcou,0,13
+1,0.084381,-1,Carro,Vazio - Aguardando,0,13
+1,0.084381,-1,Carro,Fase: Embarcando,0,14
+1,0.084426,49,Passageiro,Embarcou,1,14
+1,0.084429,33,Passageiro,Embarcou,2,14
+1,0.084431,63,Passageiro,Embarcou,3,14
+1,0.084432,54,Passageiro,Embarcou,4,14
+1,0.084453,-1,Carro,Fase: Passeando,4,14
+1,0.089880,-1,Carro,Fase: Desembarcando,4,14
+1,0.089896,33,Passageiro,Desembarcou,3,14
+1,0.089899,49,Passageiro,Desembarcou,2,14
+1,0.089900,63,Passageiro,Desembarcou,1,14
+1,0.089903,54,Passageiro,Desembarcou,0,14
+1,0.089914,-1,Carro,Vazio - Aguardando,0,14
+1,0.089915,-1,Carro,Fase: Embarcando,0,15
+1,0.089947,59,Passageiro,Embarcou,1,15
+1,0.089949,45,Passageiro,Embarcou,2,15
+1,0.089953,61,Passageiro,Embarcou,3,15
+1,0.089956,62,Passageiro,Embarcou,4,15
+1,0.089968,-1,Carro,Fase: Passeando,4,15
+1,0.096236,-1,Carro,Fase: Desembarcando,4,15
+1,0.096253,59,Passageiro,Desembarcou,3,15
+1,0.096254,61,Passageiro,Desembarcou,2,15
+1,0.096256,45,Passageiro,Desembarcou,1,15
+1,0.096259,62,Passageiro,Desembarcou,0,15
+1,0.096275,-1,Carro,Vazio - Aguardando,0,15
+1,0.096276,-1,Carro,Fase: Embarcando,0,16
+1,0.096294,52,Passageiro,Embarcou,1,16
+1,0.096297,51,Passageiro,Embarcou,2,16
+1,0.096300,57,Passageiro,Embarcou,3,16
+1,0.096303,55,Passageiro,Embarcou,4,16
+1,0.096313,-1,Carro,Fase: Passeando,4,16
+1,0.102580,-1,Carro,Fase: Desembarcando,4,16
+1,0.102598,52,Passageiro,Desembarcou,3,16
+1,0.102600,51,Passageiro,Desembarcou,2,16
+1,0.102603,57,Passageiro,Desembarcou,1,16
+1,0.102606,55,Passageiro,Desembarcou,0,16
+1,0.102623,-1,Carro,Vazio - Aguardando,0,16
