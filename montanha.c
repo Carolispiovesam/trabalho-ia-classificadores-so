@@ -261,12 +261,12 @@ int main(int argc, char *argv[]) {
         dados_passageiros[i].espera_W = dados_passageiros[i].t_embarque - dados_passageiros[i].t_pedido;
         esperas[i] = dados_passageiros[i].espera_W;
         soma_espera += esperas[i];
-        if (esperas[i] > max_espera) max_espera = esperas[i];
+        if (esperas[i] > max_espera) max_espera = esperas[i]; // Espera máxima
     }
 
     qsort(esperas, N, sizeof(double), comparar_esperas);
     
-    // Média, p95 e máximo
+    // Média e p95
     int idx_p95 = (int)(0.95 * N) - 1; 
     if(idx_p95 < 0) idx_p95 = 0;
     double p95 = esperas[idx_p95];
