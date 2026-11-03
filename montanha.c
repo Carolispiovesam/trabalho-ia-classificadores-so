@@ -158,27 +158,27 @@ void* acao_carrinho(void* argumento) {
         
         pthread_cond_broadcast(&cond_embarque);
 
-        // Uma viagem parte com exatamente C passageiros[cite: 162]
+        // Uma viagem parte com exatamente C passageiros
         while (passageiros_no_carro < C) {
             pthread_cond_wait(&cond_carro_pronto, &trava);
         }
 
-        // Fase 2: Passeio[cite: 162]
+        // Fase 2: Passeio
         estado = 1; 
         registrar_evento(-1, "Carro", "Fase: Passeando", passageiros_no_carro, viagem_atual);
         
         pthread_mutex_unlock(&trava);
-        simular_tempo(5); // Cada passeio dura 5 ms[cite: 162]
+        simular_tempo(5); // Cada passeio dura 5 ms
         pthread_mutex_lock(&trava);
 
-        // Fase 3: Desembarque[cite: 162]
+        // Fase 3: Desembarque
         estado = 2; 
         passageiros_desembarcados = 0;
         registrar_evento(-1, "Carro", "Fase: Desembarcando", passageiros_no_carro, viagem_atual);
 
         pthread_cond_broadcast(&cond_desembarque);
 
-        // O próximo embarque começa somente depois do desembarque completo[cite: 162]
+        // O próximo embarque começa somente depois do desembarque completo
         while (passageiros_desembarcados < C) {
             pthread_cond_wait(&cond_carro_pronto, &trava);
         }
@@ -304,7 +304,7 @@ int main(int argc, char *argv[]) {
         fclose(f_eventos);
     }
 
-    // Libera recursos e destrói mecanismos[cite: 148]
+    // Libera recursos e destrói mecanismos
     pthread_mutex_destroy(&trava);
     pthread_mutex_destroy(&trava_eventos);
     pthread_mutex_destroy(&trava_inicio);
