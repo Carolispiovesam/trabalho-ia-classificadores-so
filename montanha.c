@@ -16,18 +16,18 @@ pthread_cond_t cond_embarque;
 pthread_cond_t cond_desembarque;
 pthread_cond_t cond_carro_pronto;
 
-// Barreiras de início comum[cite: 150]
+// Barreiras de início comum
 pthread_mutex_t trava_inicio;
 pthread_cond_t cond_inicio;
 int iniciar_experimento = 0;
 struct timespec tempo_inicio_global;
 
-// Estado compartilhado[cite: 148]
+// Estado compartilhado
 int estado = 0; // 0=Embarcando, 1=Passeando, 2=Desembarcando
 int passageiros_no_carro = 0;
 int passageiros_desembarcados = 0;
 
-// Estruturas de Coleta de Dados[cite: 149]
+// Estruturas de Coleta de Dados
 typedef struct {
     int id;
     double t_pedido;
@@ -38,7 +38,7 @@ typedef struct {
 
 PassageiroDados *dados_passageiros;
 
-// Sistema de log de eventos na memória[cite: 149]
+// Sistema de log de eventos na memória
 typedef struct {
     double tempo;
     int participante;
@@ -52,7 +52,7 @@ Evento *lista_eventos;
 int total_eventos = 0;
 pthread_mutex_t trava_eventos;
 
-// Função auxiliar para calcular tempo decorrido em segundos[cite: 147]
+// Função auxiliar para calcular tempo decorrido em segundos
 double tempo_decorrido() {
     struct timespec agora;
     clock_gettime(CLOCK_MONOTONIC, &agora);
@@ -60,7 +60,7 @@ double tempo_decorrido() {
            (agora.tv_nsec - tempo_inicio_global.tv_nsec) / 1e9;
 }
 
-// Salva evento na memória sem usar printf para não atrasar a execução[cite: 149]
+// Salva evento na memória sem usar printf para não atrasar a execução
 void registrar_evento(int participante, const char* tipo, const char* evento_nome, int ocupacao, int id_op) {
     pthread_mutex_lock(&trava_eventos);
     lista_eventos[total_eventos].tempo = tempo_decorrido();
@@ -73,7 +73,7 @@ void registrar_evento(int participante, const char* tipo, const char* evento_nom
     pthread_mutex_unlock(&trava_eventos);
 }
 
-// Simula o tempo usando nanosleep[cite: 148]
+// Simula o tempo usando nanosleep
 void simular_tempo(int ms) {
     struct timespec ts;
     ts.tv_sec = ms / 1000;
@@ -81,13 +81,11 @@ void simular_tempo(int ms) {
     nanosleep(&ts, NULL);
 }
 
-// ---------------------------------------------------------
 // THREAD DO PASSAGEIRO
-// ---------------------------------------------------------
 void* acao_passageiro(void* argumento) {
     int id = *(int*)argumento;
 
-    // Aguarda sinal de início comum[cite: 150]
+    // Aguarda sinal de início comum
     pthread_mutex_lock(&trava_inicio);
     while (!iniciar_experimento) {
         pthread_cond_wait(&cond_inicio, &trava_inicio);
@@ -97,7 +95,7 @@ void* acao_passageiro(void* argumento) {
     // Chegadas espaçadas: 1 chegada solicitada a cada 1 ms
     simular_tempo(id * 1);
 
-    // Registra o pedido ANTES de tentar obter a trava[cite: 149]
+    // Registra o pedido ANTES de tentar obter a trava
     dados_passageiros[id].t_pedido = tempo_decorrido();
     registrar_evento(id, "Passageiro", "Chegada na Fila", passageiros_no_carro, viagem_atual);
 
@@ -108,7 +106,7 @@ void* acao_passageiro(void* argumento) {
         pthread_cond_wait(&cond_embarque, &trava);
     }
 
-    // Autorização completa obtida (Entrou no carro)[cite: 149]
+    // Autorização completa obtida (Entrou no carro)
     dados_passageiros[id].t_embarque = tempo_decorrido();
     passageiros_no_carro++;
     registrar_evento(id, "Passageiro", "Embarcou", passageiros_no_carro, viagem_atual);
@@ -138,12 +136,10 @@ void* acao_passageiro(void* argumento) {
     return NULL;
 }
 
-// ---------------------------------------------------------
 // THREAD DO CARRINHO
-// ---------------------------------------------------------
 void* acao_carrinho(void* argumento) {
     (void)argumento;
-    int total_viagens = N / C; // Encerrar depois de N/C viagens[cite: 162]
+    int total_viagens = N / C; // Encerrar depois de N/C viagens
 
     // Aguarda sinal de início comum
     pthread_mutex_lock(&trava_inicio);
@@ -155,7 +151,7 @@ void* acao_carrinho(void* argumento) {
     for (int i = 0; i < total_viagens; i++) {
         pthread_mutex_lock(&trava);
         
-        // Fase 1: Embarque[cite: 162]
+        // Fase 1: Embarque
         estado = 0; 
         viagem_atual = i + 1;
         registrar_evento(-1, "Carro", "Fase: Embarcando", passageiros_no_carro, viagem_atual);
@@ -200,9 +196,7 @@ int comparar_esperas(const void *a, const void *b) {
     return (dif > 0) - (dif < 0);
 }
 
-// ---------------------------------------------------------
 // PROGRAMA PRINCIPAL
-// ---------------------------------------------------------
 int main(int argc, char *argv[]) {
     if (argc != 4) {
         printf("Uso: ./simulacao <Capacidade C> <Passageiros N> <Repeticao>\n");
@@ -214,7 +208,7 @@ int main(int argc, char *argv[]) {
     repeticao = atoi(argv[3]);
 
     if (N % C != 0) {
-        printf("Erro: N (%d) deve ser multiplo de C (%d)\n", N, C); // Regra do trabalho[cite: 162]
+        printf("Erro: N (%d) deve ser multiplo de C (%d)\n", N, C); // Regra do trabalho
         return 1;
     }
 
@@ -233,14 +227,14 @@ int main(int argc, char *argv[]) {
     pthread_cond_init(&cond_carro_pronto, NULL);
     pthread_cond_init(&cond_inicio, NULL);
 
-    // Cria as threads[cite: 148]
+    // Cria as threads
     pthread_create(&thread_carrinho, NULL, acao_carrinho, NULL);
     for (int i = 0; i < N; i++) {
         ids_passageiros[i] = i;
         pthread_create(&thread_passageiros[i], NULL, acao_passageiro, &ids_passageiros[i]);
     }
 
-    // Sinal de início comum[cite: 150]
+    // Sinal de início comum
     simular_tempo(100); 
     clock_gettime(CLOCK_MONOTONIC, &tempo_inicio_global); 
     
@@ -249,23 +243,21 @@ int main(int argc, char *argv[]) {
     pthread_cond_broadcast(&cond_inicio);
     pthread_mutex_unlock(&trava_inicio);
 
-    // Aguarda encerramento (pthread_join)[cite: 148]
+    // Aguarda encerramento
     pthread_join(thread_carrinho, NULL);
     for (int i = 0; i < N; i++) {
         pthread_join(thread_passageiros[i], NULL);
     }
 
-    double tempo_total = tempo_decorrido(); // Tempo total T[cite: 149]
+    double tempo_total = tempo_decorrido(); // Tempo total T
 
-    // ---------------------------------------------------------
-    // CÁLCULO DE MÉTRICAS[cite: 149]
-    // ---------------------------------------------------------
+    // CÁLCULO DE MÉTRICAS
     double esperas[N];
     double soma_espera = 0;
     double max_espera = 0;
 
     for(int i=0; i<N; i++) {
-        // Espera W = t_autorizado - t_pedido[cite: 147]
+        // Espera W = t_autorizado - t_pedido
         dados_passageiros[i].espera_W = dados_passageiros[i].t_embarque - dados_passageiros[i].t_pedido;
         esperas[i] = dados_passageiros[i].espera_W;
         soma_espera += esperas[i];
@@ -274,18 +266,16 @@ int main(int argc, char *argv[]) {
 
     qsort(esperas, N, sizeof(double), comparar_esperas);
     
-    // Média, p95 e máximo[cite: 149]
+    // Média, p95 e máximo
     int idx_p95 = (int)(0.95 * N) - 1; 
     if(idx_p95 < 0) idx_p95 = 0;
     double p95 = esperas[idx_p95];
     double media = soma_espera / N;
 
-    // Vazão V = Quantidade / Tempo[cite: 149]
+    // Vazão V = Quantidade / Tempo
     double vazao = N / tempo_total; 
 
-    // ---------------------------------------------------------
-    // EXPORTAÇÃO PARA CSV[cite: 151]
-    // ---------------------------------------------------------
+    // EXPORTAÇÃO PARA CSV
     
     // Resumo
     FILE *f_resumo = fopen("resumo.csv", "a");
